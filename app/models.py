@@ -6,4 +6,5 @@ class Player(models.Model):
     weight = models.FloatField()
     position = models.CharField(max_length=5)
     birth_year = models.IntegerField()
-
+    def __str__(self):
+        return self.name

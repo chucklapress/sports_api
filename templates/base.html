@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome </title>
+      <link rel = "stylesheet" href ={% static "app/css/bootstrap.css"%}>
+  </head>
+  <body>  <br>
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+        <ul class="nav nav-pills">
+          <li role="presentation" class="active"><a href="{% url 'index_view' %}">Home</a></li>
+          <li role="presentation" class="active"><a href="{%url 'playerlist_view'%}">View all players</a></li>
+          <li role="presentation" class="active"><a href="{%url 'player_list_api_view'%}">View all players api</a></li>
+        </div>
+      </nav>
+
+      {% block content %}
+
+
+
+      {% endblock %}
+  </body>
+</html>

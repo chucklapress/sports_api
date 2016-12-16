@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
-from django.views.generic import View, TemplateView
+from django.views.generic import View, TemplateView, ListView
 from app.models import Player
 from app.serializers import PlayerSerializer
 from rest_framework import generics
@@ -16,6 +16,10 @@ class IndexView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
+
+class PlayerListView(ListView):
+    model = Player
+    template = "playerlist.html"
 
 class PlayerListAPIView(View):
     def get(self, request):

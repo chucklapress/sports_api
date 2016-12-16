@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+
+    {% for object in object_list %}
+    <br>
+    <br>
+    <br>
+    Name:<p>{{object.name}}</p>
+    Weight:<p>{{object.weight}}lb</p>
+    Position:<p>{{ object.position }}</p>
+    Birth year:<p>{{ object.birth_year}}</p>
+    <br>
+    {% endfor %}
+</div>
+{% endblock %}

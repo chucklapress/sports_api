@@ -16,11 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from app.views import PlayerListAPIView, PlayerDetailAPIView, IndexView
+from app.views import PlayerListAPIView, PlayerDetailAPIView, IndexView, PlayerListView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', IndexView.as_view(), name= "index_view"),
+    url(r'playerlist/$', PlayerListView.as_view(), name="playerlist_view"),
     url(r'^players/$', PlayerListAPIView.as_view(), name="player_list_api_view"),
-    url(r'^players/(?P<pk>\d+)/$', PlayerDetailAPIView.as_view, name="player_detail_api_view")
+    url(r'^players/(?P<pk>\d+)/$', PlayerDetailAPIView.as_view(), name="player_detail_api_view")
 ]
