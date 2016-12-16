@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sports API</title>
+  </head>
+  <body>
+    <h1>Sports API</h1>
+    <input type="button" name="get_players" value="Get Players" id="get_players">
+
+    <ul id="player_list">
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+          var button = $("#get_players");
+          button.on("click", function(event){
+            $.getJSON("/players/", function(results){
+              for (var i = 0 ; i < results.length ; i++){
+
+          };
+          $.getJSON("/players/", function(results){
+            for (var i = 0 ; i < results.length ; i++){
+              var plusButton = $("<input type='button', value='+'>")
+              var minusButton = $("<input type='button', value='-'>")
+              var playerElement = $("<li>");
+              playerElement.text(results[i].name);
+              $("#player_list").append(playerElement);
+              $("#player_list").append(plusButton);
+              $("#player_list").append(minusButton);
+            };
+            console.log(results);
+          });
+        });
+
+
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+.envrc
+.direnv
+.DS_Store
+__pyc__
+.idea
+__pycache__/
+*.pyc
